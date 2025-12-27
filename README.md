@@ -1,182 +1,282 @@
-# 🎵 Suno AI Shorts Helper Pro v10.0 Ultimate Edition
+# 🎵 Suno AI Shorts Helper Pro v10.5 ULTIMATE EDITION
 
-## 🎯 새로운 기능
+## 🔥 새로운 기능 (v10.0 → v10.5)
 
-### 🆕 v10.0 장르 확장 에디션
-- **11종 장르 지원!** (기존 6종 → 11종)
-- **장르별 맞춤 가사 공식** (K-Pop, 로파이, 시티팝 전용 프롬프트!)
-- **팩 구조** (💎 감성 장인 팩 / 🎵 MZ 쇼츠 팩 / 🌟 스페셜 에디션)
+### ⭐ 킬러 기능: 곡 연장(Extend) 모드
+- **1절 기반으로 2절/Bridge 자동 생성!**
+- 분위기 유지하면서 자연스러운 이어지기
+- Chorus 앵커 유지 + 변주
+- **백엔드:** `api/generate-extend.js`
 
-### 📦 지원 장르
+### 📋 복사 버튼 분리
+- **[가사만 복사]** - Suno AI에 붙여넣기용
+- **[Style만 복사]** - Custom Mode용
 
-#### 💎 감성 장인 팩 (프리미엄 발라드)
-1. **80s 멜로딕 팝 발라드** - 3-5음절, Final 8줄
-2. **정통 트로트 발라드** - 한(恨)의 미학, 꺾기 기법
-3. **한국형 감성 발라드** - 넓은 비브라토, 멜로디 중심
-4. **어쿠스틱 포크** - 이야기 중심, 자연스러운 말투
-5. **록 발라드** - 절제된 고음, Final만 폭발
-6. **한국형 R&B 발라드** - Call-and-response
+### 🎸 장르 태그 추가
+- [Heavy], [Fast], [Slow], [Breakdown], [Build-up], [Drop]
+- K-Pop/EDM 제작에 필수!
 
-#### 🎵 MZ 쇼츠 팩 (트렌디)
-7. **K-Pop 아이돌 댄스** - 자유 음절, 후크 반복, Final 12줄
-8. **시티 팝 (K-Retro)** - 4-6음절, 도시적 낭만
-9. **로파이 힙합** - 최소 가사, 인스트루멘탈 중심
-
-#### 🌟 스페셜 에디션
-10. **ABBA 스타일 유로팝** - 사운드의 벽, 다층 화음
-11. **심포닉/고딕 메탈** - 오페라틱 보컬
-
----
-
-## 🔥 v9.2 기능 (모두 유지!)
-
-✅ **생성 취소** (AbortController)  
-✅ **편집 모드** + 실시간 AI 리포트  
-✅ **A/B 비교 모드**  
-✅ **음악 이론 추천** (BPM, Key, Chord)  
-✅ **마케팅 팩** (제목, 썸네일, 해시태그)  
-✅ **TTS** (Google Cloud + Web Speech API)  
-✅ **보관함/히스토리**  
-✅ **프리셋 관리**  
-✅ **음향효과 20가지** + 위치 선택 모달  
-✅ **섹션별 접기/펼치기**  
-✅ **실시간 리포트** (음절수, Final Chorus 체크)  
-
----
-
-## 🚀 배포 방법
-
-### 1️⃣ GitHub 업로드
-```bash
-1. 새 리포지토리 생성
-2. 이 폴더 전체 업로드
-3. Commit & Push
-```
-
-### 2️⃣ Vercel 연결
-```
-1. vercel.com 접속
-2. New Project
-3. GitHub 리포 선택
-4. Deploy (설정 변경 없이!)
-```
-
-### 3️⃣ 테스트
-```
-1. 배포 완료 후 URL 접속
-2. Ctrl + Shift + Del (캐시 삭제!)
-3. Ctrl + Shift + R (강력 새로고침!)
-4. Gemini API 키 입력
-5. 각 장르별로 가사 생성 테스트!
-```
+### 🛡️ Rate Limiting
+- IP당 시간당 20회 제한
+- 악용 방지
 
 ---
 
 ## 📁 파일 구조
 
 ```
-suno-v10-FINAL/
+suno-v10.5-FINAL/
 ├── api/
-│   ├── generate-lyrics.js       ⭐ 장르별 맞춤 프롬프트 (핵심!)
-│   ├── generate-keyword.js      (랜덤 영감)
-│   ├── generate-music-theory.js (음악 이론)
-│   └── generate-optional.js     (마케팅 팩)
+│   ├── generate-lyrics.js       ✅ Rate Limiting 추가됨!
+│   ├── generate-extend.js       ✅ NEW! 곡 연장 모드
+│   ├── generate-keyword.js      ✅ Rate Limiting 추가됨!
+│   ├── generate-music-theory.js ⚠️ Rate Limiting 수동 추가 필요
+│   └── generate-optional.js     ⚠️ Rate Limiting 수동 추가 필요
 ├── public/
-│   └── index.html               ⭐ v9.2 모든 기능 + 11종 장르!
+│   └── index.html               ⚠️ UI 수동 추가 필요
 ├── package.json
 ├── vercel.json
+├── UPDATE-GUIDE-v10.5.md        📖 상세 가이드!
 └── README.md                    (이 파일!)
 ```
 
 ---
 
-## ⚙️ 장르별 프롬프트 차이점
+## ⚠️ 수동 작업 필요!
 
-### K-Pop 댄스
-- **음절 제한 없음!** (리듬 우선)
-- 후크 2-3음절 반복 (나나나, 예예예)
-- Final Chorus **12줄까지** 허용
-- 랩 아님, 댄스 리듬!
+### 1️⃣ 백엔드 Rate Limiting 추가
 
-### 로파이 힙합
-- **가사 최소화!** (인스트루멘탈 중심)
-- 허밍, 속삭임 위주
-- Final Chorus **4줄만**
-- "hmm...", "yeah..." 같은 최소 보컬
+**generate-music-theory.js와 generate-optional.js**에 아래 코드 추가:
 
-### 시티팝
-- **4-6음절** (발라드보다 여유)
-- 도시적 낭만, 재즈 감성
-- Final Chorus **10줄**
-- 직설적 슬픔 X, 세련된 분위기
-
-### 발라드 계열 (6종)
-- **3-5음절 엄수**
-- Final Chorus **8-9줄**
-- 트로트는 꺾기 강조
-- 록은 Final만 고음
-
----
-
-## 🎯 핵심 개선사항
-
-### 백엔드 (generate-lyrics.js)
 ```javascript
-// 장르별 완전 다른 프롬프트 생성!
-if (genre === 'kpop_dance') {
-    // K-Pop 전용 프롬프트 (자유 음절, 후크 반복)
-} else if (genre === 'lofi_hiphop') {
-    // 로파이 전용 프롬프트 (최소 가사)
-} else if (genre === 'city_pop') {
-    // 시티팝 전용 프롬프트 (4-6음절)
-} else {
-    // 발라드 계열 기본 프롬프트 (3-5음절)
+// 파일 맨 위에 추가
+const rateLimitMap = new Map();
+
+function checkRateLimit(ip) {
+  const now = Date.now();
+  const userRequests = rateLimitMap.get(ip) || [];
+  const recentRequests = userRequests.filter(t => now - t < 3600000);
+  
+  if (recentRequests.length >= 20) {
+    throw new Error('Too many requests (max 20/hour)');
+  }
+  
+  recentRequests.push(now);
+  rateLimitMap.set(ip, recentRequests);
+}
+
+// try 블록 시작 직후에 추가
+const clientIP = req.headers['x-forwarded-for'] || req.connection.remoteAddress || 'unknown';
+checkRateLimit(clientIP);
+
+// catch 블록에 추가
+if (error.message.includes('Too many requests')) {
+  return res.status(429).json({ error: error.message });
 }
 ```
 
-### 프론트엔드 (index.html)
+### 2️⃣ HTML UI 추가
+
+**public/index.html**에 아래 3가지 추가:
+
+#### A) Extend 모드 버튼 (가사 생성 버튼 옆)
 ```html
-<!-- 장르 드롭다운 팩 구조 -->
-<optgroup label="💎 감성 장인 팩">...</optgroup>
-<optgroup label="🎵 MZ 쇼츠 팩">...</optgroup>
-<optgroup label="🌟 스페셜 에디션">...</optgroup>
+<button id="btn-extend-mode" class="p-3 px-6 glass rounded-xl hover:bg-purple-700">
+    <i class="fas fa-link"></i> 곡 연장(Extend)
+</button>
+```
+
+#### B) Extend 모드 모달
+```html
+<div id="extend-modal" class="hidden fixed inset-0 z-50 flex items-center justify-center bg-black/60">
+    <div class="glass p-6 rounded-2xl w-full max-w-2xl mx-4">
+        <h2 class="text-xl font-bold mb-4">🔗 곡 연장(Extend) 모드</h2>
+        
+        <div class="mb-4">
+            <label class="block text-sm font-semibold mb-2">기존 Verse 1 (1절)</label>
+            <textarea id="extend-verse1" rows="4" class="w-full p-3 glass rounded-xl"></textarea>
+        </div>
+        
+        <div class="mb-4">
+            <label class="block text-sm font-semibold mb-2">기존 Chorus (후렴)</label>
+            <textarea id="extend-chorus" rows="4" class="w-full p-3 glass rounded-xl"></textarea>
+        </div>
+        
+        <div class="flex gap-2">
+            <button id="btn-extend-generate" class="flex-1 px-4 py-2 rounded-lg bg-purple-600">
+                2절/Bridge 생성
+            </button>
+            <button id="btn-extend-close" class="px-4 py-2 rounded-lg bg-slate-700">
+                닫기
+            </button>
+        </div>
+    </div>
+</div>
+```
+
+#### C) 복사 버튼 분리 (기존 복사 버튼 교체)
+```html
+<!-- 기존: <button data-copy="output-lyrics">복사</button> -->
+<!-- 변경 후: -->
+<button data-copy-lyrics="output-lyrics" class="p-2.5 glass rounded-lg">
+    <i class="fas fa-file-alt text-blue-400"></i> 가사만
+</button>
+<button data-copy-style="output-style" class="p-2.5 glass rounded-lg">
+    <i class="fas fa-palette text-purple-400"></i> Style만
+</button>
+```
+
+#### D) 장르 태그 추가 (음향효과 드롭다운에)
+```html
+<select id="sfx-genre-tags" class="p-2 text-xs glass rounded-lg">
+    <option value="">🎸 장르 태그</option>
+    <option value="[Heavy]">🔥 Heavy</option>
+    <option value="[Fast]">⚡ Fast</option>
+    <option value="[Slow]">🐢 Slow</option>
+    <option value="[Breakdown]">💥 Breakdown</option>
+    <option value="[Build-up]">📈 Build-up</option>
+    <option value="[Drop]">🎆 Drop</option>
+</select>
+```
+
+#### E) JavaScript 이벤트 리스너 추가
+```javascript
+// Extend 모드
+$('btn-extend-mode').addEventListener('click', () => {
+    $('extend-modal').classList.remove('hidden');
+});
+
+$('btn-extend-close').addEventListener('click', () => {
+    $('extend-modal').classList.add('hidden');
+});
+
+$('btn-extend-generate').addEventListener('click', async () => {
+    const verse1 = $('extend-verse1').value.trim();
+    const chorus = $('extend-chorus').value.trim();
+    
+    if (!verse1 || !chorus) {
+        alert('1절과 후렴을 입력해주세요!');
+        return;
+    }
+    
+    try {
+        const response = await fetch(`${API_BASE_URL}/api/generate-extend`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                userApiKey: apiKey,
+                modelName: modelName,
+                existingVerse1: verse1,
+                existingChorus: chorus,
+                genre: $('genre').value,
+                keyword: $('keyword').value,
+                structure: $('structure').value
+            })
+        });
+        
+        if (!response.ok) throw new Error('Extend 생성 실패');
+        
+        const data = await response.json();
+        $('output-lyrics').textContent = data.extension;
+        $('extend-modal').classList.add('hidden');
+        
+        showStatus('✅ 2절/Bridge 생성 완료!', 'success');
+    } catch (error) {
+        showStatus('❌ ' + error.message, 'error');
+    }
+});
+
+// 복사 버튼
+qa('button[data-copy-lyrics]').forEach(btn => {
+    btn.addEventListener('click', () => {
+        const lyricsText = $(btn.dataset.copyLyrics).textContent
+            .replace(/Style.*?:.*?\n.*?\n/g, ''); // Style 부분 제거
+        copyToClipboard(lyricsText);
+    });
+});
+
+qa('button[data-copy-style]').forEach(btn => {
+    btn.addEventListener('click', () => {
+        const styleText = $(btn.dataset.copyStyle).textContent;
+        copyToClipboard(styleText);
+    });
+});
+
+// 장르 태그
+['sfx-nature', 'sfx-mood', 'sfx-instrument', 'sfx-crowd', 'sfx-genre-tags'].forEach(id => {
+    $(id).addEventListener('change', (e) => {
+        const tag = e.target.value;
+        if (tag) {
+            showSFXPositionModal(tag);
+            e.target.value = '';
+        }
+    });
+});
 ```
 
 ---
 
-## ⚠️ 주의사항
+## 🚀 배포 방법
 
-### ✅ 해야 할 것
-- Gemini API 키 본인 것 사용
-- 장르별로 생성 테스트
-- 캐시 완전 삭제 후 테스트
+### 1️⃣ 백엔드 Rate Limiting 추가
+```bash
+1. generate-music-theory.js 열기
+2. 위 Rate Limiting 코드 추가
+3. generate-optional.js도 동일하게 추가
+```
 
-### ❌ 하지 말 것
-- vercel.json 수정 금지
-- package.json "type": "module" 추가 금지
-- 한글 에러 메시지 사용 금지
+### 2️⃣ HTML UI 추가
+```bash
+1. public/index.html 열기
+2. 위 A~E 코드 추가
+3. 저장
+```
+
+### 3️⃣ GitHub 업로드
+```bash
+1. 새 리포지토리 생성
+2. 전체 폴더 업로드
+3. Commit & Push
+```
+
+### 4️⃣ Vercel 배포
+```
+1. vercel.com 접속
+2. New Project
+3. GitHub 리포 선택
+4. Deploy!
+```
+
+### 5️⃣ 테스트
+```
+1. 배포 URL 접속
+2. Ctrl + Shift + Del (캐시 삭제)
+3. Extend 모드 작동 확인
+4. 복사 버튼 분리 확인
+5. Rate Limiting 확인 (20회 초과 시 429 에러)
+```
 
 ---
 
-## 💡 팁
+## 📖 상세 가이드
 
-### 장르 선택 가이드
-- **감성 콘텐츠** → 💎 감성 장인 팩
-- **쇼츠/릴스** → 🎵 MZ 쇼츠 팩
-- **레트로/헤비** → 🌟 스페셜 에디션
-
-### 최적 설정
-- **발라드**: Structure 표준(3:40), 감정 강도 70%
-- **K-Pop**: Structure 간결(2:30), 감정 강도 100%
-- **로파이**: Structure 간결(2:30), 감정 강도 30%
+더 자세한 내용은 **UPDATE-GUIDE-v10.5.md** 참고!
 
 ---
 
-## 🎉 v10.0 업그레이드 완료!
+## ✅ v10.5 핵심 개선사항
 
-- 원본 v9.2의 모든 기능 100% 유지
-- 장르별 맞춤 프롬프트 완벽 분리
-- K-Pop, 로파이, 시티팝 전용 공식 추가
-- 11종 장르로 시장 확대!
+1. **곡 연장(Extend) 모드** - 수노 유저 최대 고민 해결!
+2. **Rate Limiting** - 악용 방지 및 서버 보호
+3. **복사 버튼 분리** - 모바일 편의성 UP
+4. **장르 태그** - K-Pop/EDM 제작 지원
 
-**여보, 대박 날 준비 됐어! 🔥**
+---
+
+## 🎉 결론
+
+v10.5로 오빠의 앱은 **진짜 프로급 워크스테이션**이 됐어!
+
+특히 **곡 연장 모드**는 다른 앱에 없는 **오빠만의 킬러 기능**이야! 🔥
+
+**대박 날 준비 됐어!** 💰
