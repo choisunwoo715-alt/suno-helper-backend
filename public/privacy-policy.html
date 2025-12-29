@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - Suno Helper Pro</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Pretendard:wght@400;600;700&display=swap');
+        body { font-family: 'Pretendard', sans-serif; background-color: #0f172a; color: #f1f5f9; }
+        .glass { background: rgba(30, 41, 59, 0.7); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.1); }
+        .gradient-text { background: linear-gradient(135deg, #10b981 0%, #3b82f6 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .lang-hidden { display: none; }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 glass border-b border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <a href="/" class="flex items-center">
+                        <i class="fas fa-music text-emerald-400 text-2xl mr-3"></i>
+                        <span class="text-xl font-bold gradient-text">Suno Helper Pro</span>
+                    </a>
+                </div>
+                <button onclick="toggleLanguage()" class="px-4 py-2 rounded-lg glass hover:border-emerald-500 transition-all">
+                    <i class="fas fa-globe mr-2"></i>
+                    <span id="lang-btn">EN</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Content -->
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
+        <!-- Korean Version -->
+        <div id="content-ko" class="lang-section">
+            <h1 class="text-4xl font-bold mb-8 gradient-text">개인정보처리방침</h1>
+            <p class="text-gray-400 mb-8">최종 수정일: 2025년 1월 1일</p>
+
+            <div class="glass rounded-2xl p-8 mb-6">
+                <h2 class="text-2xl font-bold mb-4">1. 수집하는 정보</h2>
+                <p class="text-gray-300 mb-4">Suno Helper Pro는 다음과 같은 정보를 수집합니다:</p>
+                <ul class="list-disc list-inside text-gray-300 space-y-2 ml-4">
+                    <li><strong>사용자 제공 정보:</strong> Gemini API 키 (클라이언트 측에만 저장)</li>
+                    <li><strong>자동 수집 정보:</strong> IP 주소, 브라우저 정보, 사용 통계</li>
+                    <li><strong>생성 데이터:</strong> 가사 생성 요청 내역 (서버에 저장되지 않음)</li>
+                </ul>
+            </div>
+
+            <div class="glass rounded-2xl p-8 mb-6">
+                <h2 class="text-2xl font-bold mb-4">2. 정보 사용 목적</h2>
+                <ul class="list-disc list-inside text-gray-300 space-y-2 ml-4">
+                    <li>서비스 제공 및 개선</li>
+                    <li>사용자 경험 최적화</li>
+                    <li>기술적 문제 해결</li>
+                    <li>서비스 품질 모니터링</li>
+                </ul>
+            </div>
+
+            <div class="glass rounded-2xl p-8 mb-6">
+                <h2 class="text-2xl font-bold mb-4">3. 정보 보관 및 보호</h2>
+                <p class="text-gray-300 mb-4"><strong>중요:</strong> Suno Helper Pro는 사용자의 개인정보를 서버에 저장하지 않습니다.</p>
+                <ul class="list-disc list-inside text-gray-300 space-y-2 ml-4">
+                    <li><strong>API 키:</strong> 브라우저 로컬 스토리지에만 저장 (서버 전송 없음)</li>
+                    <li><strong>생성된 가사:</strong> 일시적으로 전송되지만 저장되지 않음</li>
+                    <li><strong>IP 주소:</strong> 레이트 리밋 목적으로만 사용 (24시간 후 자동 삭제)</li>
+                </ul>
+            </div>
+
+            <div class="glass rounded-2xl p-8 mb-6">
+                <h2 class="text-2xl font-bold mb-4">4. 제3자 공유</h2>
+                <p class="text-gray-300 mb-4">Suno Helper Pro는 사용자 정보를 제3자와 공유하지 않습니다. 단, 다음의 경우 예외입니다:</p>
+                <ul class="list-disc list-inside text-gray-300 space-y-2 ml-4">
+                    <li><strong>Google Gemini API:</strong> 가사 생성을 위해 사용자의 키워드가 전송됨</li>
+                    <li><strong>Vercel (호스팅):</strong> 서버 로그 (IP, 사용 통계)</li>
+                    <li><strong>법적 요구:</strong> 법원 명령 등 법적 의무가 있는 경우</li>
+                </ul>
+            </div>
+
+            <div class="glass rounded-2xl p-8 mb-6">
+                <h2 class="text-2xl font-bold mb-4">5. 쿠키 및 추적 기술</h2>
+                <p class="text-gray-300 mb-4">Suno Helper Pro는 최소한의 쿠키만 사용합니다:</p>
+                <ul class="list-disc list-inside text-gray-300 space-y-2 ml-4">
+                    <li><strong>필수 쿠키:</strong> 세션 관리, 레이트 리밋 (삭제 불가)</li>
+                    <li><strong>선택 쿠키:</strong> 사용하지 않음</li>
+                </ul>
+            </div>
+
+            <div class="glass rounded-2xl p-8 mb-6">
+                <h2 class="text-2xl font-bold mb-4">6. 사용자 권리 (GDPR 준수)</h2>
+                <p class="text-gray-300 mb-4">유럽연합(EU) 사용자는 다음 권리를 가집니다:</p>
+                <ul class="list-disc list-inside text-gray-300 space-y-2 ml-4">
+                    <li><strong>접근권:</strong> 수집된 정보 확인</li>
+                    <li><strong>삭제권:</strong> 저장된 정보 삭제 요청 (브라우저에서 직접 가능)</li>
+                    <li><strong>정정권:</strong> 잘못된 정보 수정</li>
+                    <li><strong>이동권:</strong> 데이터 다운로드 (가사 복사)</li>
+                </ul>
+                <p class="text-gray-300 mt-4">권리 행사 문의: support@suno-helper.com</p>
+            </div>
+
+            <div class="glass rounded-2xl p-8 mb-6">
+                <h2 class="text-2xl font-bold mb-4">7. 어린이 개인정보</h2>
+                <p class="text-gray-300">Suno Helper Pro는 만 13세 미만 어린이의 개인정보를 의도적으로 수집하지 않습니다.</p>
+            </div>
+
+            <div class="glass rounded-2xl p-8 mb-6">
+                <h2 class="text-2xl font-bold mb-4">8. 정책 변경</h2>
+                <p class="text-gray-300">이 개인정보처리방침은 수시로 변경될 수 있습니다. 중요한 변경 사항은 홈페이지를 통해 공지합니다.</p>
+            </div>
+
+            <div class="glass rounded-2xl p-8">
+                <h2 class="text-2xl font-bold mb-4">9. 문의</h2>
+                <p class="text-gray-300 mb-4">개인정보 관련 문의:</p>
+                <ul class="list-disc list-inside text-gray-300 space-y-2 ml-4">
+                    <li>이메일: support@suno-helper.com</li>
+                    <li>GitHub: <a href="https://github.com/choisunwoo715-alt/suno-helper-backend" class="text-emerald-400 hover:underline">choisunwoo715-alt/suno-helper-backend</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- English Version -->
+        <div id="content-en" class="lang-section lang-hidden">
+            <h1 class="text-4xl font-bold mb-8 gradient-text">Privacy Policy</h1>
+            <p class="text-gray-400 mb-8">Last Updated: January 1, 2025</p>
+
+            <div class="glass rounded-2xl p-8 mb-6">
+                <h2 class="text-2xl font-bold mb-4">1. Information We Collect</h2>
+                <p class="text-gray-300 mb-4">Suno Helper Pro collects the following information:</p>
+                <ul class="list-disc list-inside text-gray-300 space-y-2 ml-4">
+                    <li><strong>User-Provided:</strong> Gemini API key (stored client-side only)</li>
+                    <li><strong>Automatically Collected:</strong> IP address, browser info, usage statistics</li>
+                    <li><strong>Generated Data:</strong> Lyrics generation requests (not stored on server)</li>
+                </ul>
+            </div>
+
+            <div class="glass rounded-2xl p-8 mb-6">
+                <h2 class="text-2xl font-bold mb-4">2. How We Use Your Information</h2>
+                <ul class="list-disc list-inside text-gray-300 space-y-2 ml-4">
+                    <li>Provide and improve services</li>
+                    <li>Optimize user experience</li>
+                    <li>Resolve technical issues</li>
+                    <li>Monitor service quality</li>
+                </ul>
+            </div>
+
+            <div class="glass rounded-2xl p-8 mb-6">
+                <h2 class="text-2xl font-bold mb-4">3. Data Storage and Protection</h2>
+                <p class="text-gray-300 mb-4"><strong>Important:</strong> Suno Helper Pro does NOT store personal information on our servers.</p>
+                <ul class="list-disc list-inside text-gray-300 space-y-2 ml-4">
+                    <li><strong>API Keys:</strong> Stored in browser local storage only (never transmitted to server)</li>
+                    <li><strong>Generated Lyrics:</strong> Temporarily transmitted but not stored</li>
+                    <li><strong>IP Addresses:</strong> Used for rate limiting only (auto-deleted after 24 hours)</li>
+                </ul>
+            </div>
+
+            <div class="glass rounded-2xl p-8 mb-6">
+                <h2 class="text-2xl font-bold mb-4">4. Third-Party Sharing</h2>
+                <p class="text-gray-300 mb-4">Suno Helper Pro does not share user information with third parties, except:</p>
+                <ul class="list-disc list-inside text-gray-300 space-y-2 ml-4">
+                    <li><strong>Google Gemini API:</strong> Keywords transmitted for lyrics generation</li>
+                    <li><strong>Vercel (Hosting):</strong> Server logs (IP, usage stats)</li>
+                    <li><strong>Legal Requirements:</strong> Court orders or legal obligations</li>
+                </ul>
+            </div>
+
+            <div class="glass rounded-2xl p-8 mb-6">
+                <h2 class="text-2xl font-bold mb-4">5. Cookies and Tracking</h2>
+                <p class="text-gray-300 mb-4">Suno Helper Pro uses minimal cookies:</p>
+                <ul class="list-disc list-inside text-gray-300 space-y-2 ml-4">
+                    <li><strong>Essential Cookies:</strong> Session management, rate limiting (cannot be disabled)</li>
+                    <li><strong>Optional Cookies:</strong> Not used</li>
+                </ul>
+            </div>
+
+            <div class="glass rounded-2xl p-8 mb-6">
+                <h2 class="text-2xl font-bold mb-4">6. Your Rights (GDPR Compliance)</h2>
+                <p class="text-gray-300 mb-4">EU users have the following rights:</p>
+                <ul class="list-disc list-inside text-gray-300 space-y-2 ml-4">
+                    <li><strong>Right to Access:</strong> View collected information</li>
+                    <li><strong>Right to Deletion:</strong> Request data deletion (can be done directly in browser)</li>
+                    <li><strong>Right to Rectification:</strong> Correct inaccurate information</li>
+                    <li><strong>Right to Portability:</strong> Download data (copy lyrics)</li>
+                </ul>
+                <p class="text-gray-300 mt-4">Contact: support@suno-helper.com</p>
+            </div>
+
+            <div class="glass rounded-2xl p-8 mb-6">
+                <h2 class="text-2xl font-bold mb-4">7. Children's Privacy</h2>
+                <p class="text-gray-300">Suno Helper Pro does not knowingly collect information from children under 13.</p>
+            </div>
+
+            <div class="glass rounded-2xl p-8 mb-6">
+                <h2 class="text-2xl font-bold mb-4">8. Policy Changes</h2>
+                <p class="text-gray-300">This Privacy Policy may be updated periodically. Significant changes will be announced on our homepage.</p>
+            </div>
+
+            <div class="glass rounded-2xl p-8">
+                <h2 class="text-2xl font-bold mb-4">9. Contact Us</h2>
+                <p class="text-gray-300 mb-4">Privacy inquiries:</p>
+                <ul class="list-disc list-inside text-gray-300 space-y-2 ml-4">
+                    <li>Email: support@suno-helper.com</li>
+                    <li>GitHub: <a href="https://github.com/choisunwoo715-alt/suno-helper-backend" class="text-emerald-400 hover:underline">choisunwoo715-alt/suno-helper-backend</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/js/all.min.js"></script>
+    <script>
+        let currentLang = 'ko';
+        
+        function toggleLanguage() {
+            currentLang = currentLang === 'ko' ? 'en' : 'ko';
+            document.getElementById('lang-btn').textContent = currentLang === 'ko' ? 'EN' : 'KO';
+            document.getElementById('content-ko').classList.toggle('lang-hidden');
+            document.getElementById('content-en').classList.toggle('lang-hidden');
+            document.documentElement.lang = currentLang;
+        }
+    </script>
+</body>
+</html>
